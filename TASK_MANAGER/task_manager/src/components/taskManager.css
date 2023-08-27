@@ -1,0 +1,18 @@
+.main,.log{color: white;
+    min-height: 83vh;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    column-gap: 17px;
+    background-image: url('../../public/photo_2022-11-06_19-23-23.jpg');
+    background-size:100% 100%;
+}
+
+.log{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr6QRXeugPF2PnRVAlSUYpzsBaod6CzmEFXQ&usqp=CAU');}
+    
+@media screen and (max-width:500px) {
+    .main,.log{
+              display: grid;       
+              grid-template-columns: 12fr;
+    }
+}
