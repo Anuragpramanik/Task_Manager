@@ -48,7 +48,7 @@ app.put("/upDateTask/:id", async (req, res) => {
         "TaskId":parseInt(req.body.TaskId),
         "Title": req.body.Title,
         "Description":req.body.Description,
-        "Completed":(req.body.Completed=="true")?true:false
+        "Completed":(req.body.Completed=="true"||true)?true:false
     }
     try {
         const taskId = parseInt(req.params.taskId);
