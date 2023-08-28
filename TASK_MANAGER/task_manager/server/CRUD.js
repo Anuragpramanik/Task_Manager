@@ -51,7 +51,7 @@ app.put("/upDateTask/:id", async (req, res) => {
         "Completed":(req.body.Completed=="true"||true)?true:false
     }
     try {
-        const taskId = parseInt(req.params.taskId);
+        const taskId = parseInt(req.params.id);
         const client = await MongoClient.connect(connectionString);
         const database = client.db("taskdb");
         await database.collection("tbltasks").updateOne(
@@ -68,7 +68,7 @@ app.put("/upDateTask/:id", async (req, res) => {
 
 app.delete("/deleteTask/:id", async (req, res) => {
     try {
-        const taskId = parseInt(req.params.todoId);
+        const taskId = parseInt(req.params.id);
         const client = await MongoClient.connect(connectionString);
         const database = client.db("taskdb");
         await database.collection("tbltasks").deleteOne({ TaskId:taskId });
