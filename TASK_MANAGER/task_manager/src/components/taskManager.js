@@ -14,7 +14,6 @@ export function TaskManager() {
   function loadData(){
     axios({
       method:'GET',
-      // url:'https://jsonplaceholder.typicode.com/users/1/todos'
       url:'http://localhost:4001/tasks'
     })
     .then((response)=>{
@@ -62,7 +61,6 @@ async function handleSubmit(e) {
       if (selectedTodo) {
         // Update the existing todo
         const response = await axios.put(
-          // `https://jsonplaceholder.typicode.com/todos/${selectedTodo.id}`,
           `http://localhost:4001/upDateTask/${selectedTodo.TaskId}`,
           newData
         );
@@ -74,7 +72,6 @@ async function handleSubmit(e) {
       } else {
         // Add a new todo
         const response = await axios.post(
-          // "https://jsonplaceholder.typicode.com/users/1/todos",
           'http://localhost:4001/setTask',
           newData
         );
@@ -91,7 +88,6 @@ async function handleSubmit(e) {
   async function handleDelete(todoId) {
     try {
       await axios.delete(
-        // `https://jsonplaceholder.typicode.com/todos/${todoId}`
        `http://localhost:4001/deleteTask/${todoId}`
         );
       setData((prevData) => prevData.filter((todo) => todo.TaskId !== todoId));
